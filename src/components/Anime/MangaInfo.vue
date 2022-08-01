@@ -11,7 +11,6 @@
                     <div class="anime-info">
                         <h6>{{apidata.title}}</h6>
                         <p>Rank: {{apidata.rank}}</p>
-                        <p>Episodes: {{apidata.episodes}}</p>
                         <p>Rating: {{apidata.score}} ⭐</p>
                         
 
@@ -37,7 +36,7 @@ export default {
         }
     },
     async created() {
-        const returenddata = await axios.get("https://api.jikan.moe/v4/anime/" + this.$route.params.id + "/full");
+        const returenddata = await axios.get("https://api.jikan.moe/v4/manga/" + this.$route.params.id + "/full");
         this.apidata = returenddata.data.data
         console.log(returenddata);
 

@@ -1,16 +1,22 @@
 <template>
     <div>
-<AnimeList/>
+        <TopAnime />
+        <TopManga/>
     </div>
 </template>
 
 <script>
-import AnimeList from './components/Anime/AnimeList.vue';
-    export default {
-    components: { AnimeList }
+import TopAnime from './MainItems/TopAnime.vue';
+import TopManga from './MainItems/TopManga.vue';
+
+
+export default {
+    components: {
+    TopAnime,
+    TopManga
+}
 }
 </script>
 
 <style>
-
 </style>
