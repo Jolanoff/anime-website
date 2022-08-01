@@ -54,11 +54,33 @@ export default {
 }
 </script>
 <style>
-.page-item {
-    color: bisque;
+.pagination {
+    --bs-pagination-padding-x: 0.75rem;
+    --bs-pagination-padding-y: 0.375rem;
+    --bs-pagination-font-size: 1rem;
+    --bs-pagination-color: #000000;
+    --bs-pagination-bg: #029dbc;
+    --bs-pagination-border-width: 1px;
+    --bs-pagination-border-color: #029dbc;
+    --bs-pagination-border-radius: 5rem;
+    --bs-pagination-hover-color: #000000;
+    --bs-pagination-hover-bg: #02778f;
+    --bs-pagination-hover-border-color: #02778f;
+    --bs-pagination-focus-color: black;
+    --bs-pagination-focus-bg: #004b5a;
+    --bs-pagination-focus-box-shadow: 0 0 0 0.25remrgba(13, 110, 253, 0.25);
+    --bs-pagination-active-color: #fff;
+    --bs-pagination-active-bg: #02778f;
+    --bs-pagination-active-border-color: #02778f;
+    --bs-pagination-disabled-color: #ffffff;
+    --bs-pagination-disabled-bg: #02778f;
+    --bs-pagination-disabled-border-color: #02778f;
+    display: flex;
+    padding-left: 0;
+    list-style: none;
     
 }
-.page-item{
- 
-}
+
+
+
 </style>
