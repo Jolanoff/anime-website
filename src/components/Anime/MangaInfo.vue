@@ -1,26 +1,42 @@
 <template>
     <div>
-
-        <div class="container text-center">
-            <div class="row">
-                <div class="col">
-                    <div class="image"><img :src="apidata.images.jpg.image_url" alt=""></div>
-
-                </div>
-                <div class="col">
-                    <div class="anime-info">
-                        <h6>{{apidata.title}}</h6>
-                        <p>Rank: {{apidata.rank}}</p>
-                        <p>Rating: {{apidata.score}} ⭐</p>
-                        
-
+        <div class="content">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col">
+                        <div class="image"><img :src="apidata.images.jpg.image_url" alt=""></div>
                     </div>
+                    <div class="col">
+                        <div class="anime-info">
+                            <div class="anime-tiltle">{{ apidata.title }}</div>
+                            <div class="discryption">{{ apidata.synopsis }}</div>
+                        </div>
+                        <div class="anime-dis">
+                            <div class="container text-center">
+                                <div class="row">
+                                    <div class="col">
+                                        <div>Rank : {{ apidata.rank }}</div>
+                                    </div>
+                                    <div class="col">
 
+                                    </div>
+                                    <div class="col">
+                                        <div>Rating : {{ apidata.score }}⭐</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                
             </div>
         </div>
-
+        <div class="content-2">
+            <div class="content-2 space"></div>
+            <h1>Characters</h1>
+            <div class="container d-flex flex-wrap  justify-content-center ">
+                <CharecterItem v-for="Chare in CharList" :key="Chare" :Chare="Chare" class="charecter-card" />
+            </div>
+        </div>
     </div>
 </template>
 
@@ -28,11 +44,12 @@
 
 
 import axios from 'axios';
-
+import CharecterItem from './Items/CharecterItem.vue';
 export default {
     data() {
         return {
             apidata: null,
+            CharList: [],
         }
     },
     async created() {
@@ -40,8 +57,12 @@ export default {
         this.apidata = returenddata.data.data
         console.log(returenddata);
 
-    },
+        const GetCharecters = await axios.get("https://api.jikan.moe/v4/manga/" + this.$route.params.id + "/characters");
+        this.CharList = GetCharecters.data.data;
+        console.log(GetCharecters);
 
+    },
+    components: { CharecterItem }
 }
 
 </script>
@@ -50,7 +71,8 @@ export default {
 .image {
     margin: 15%;
 }
-.anime-info{
+
+.anime-info {
     margin-top: 15%;
     color: white;
     text-align: left;

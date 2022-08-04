@@ -21,5 +21,15 @@
 </script>
 
 <style>
-
+.Search-box{
+    color: white;
+    font-size: 25px;
+    border-radius: 20px;
+    border: 1px solid rgb(57, 176, 255);
+    background-color: rgb(0, 22, 37);
+    text-align: center;
+}
+.Search-box:active{
+     border: 1px solid rgb(57, 176, 255);
+}
 </style>

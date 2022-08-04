@@ -28,12 +28,9 @@
 <script>
 
 import axios from 'axios';
-
 import Paginate from 'vuejs-paginate-next';
 import AnimeItem from './Items/AnimeItem.vue';
 import SearchForAnime from './Items/SearchForAnime.vue';
-
-
 export default {
     data: function () {
         return {
@@ -51,7 +48,7 @@ export default {
             this.AnimeList = returenddata.data.data;
         },
         async handleSearch(value){
-            const returenddata = await axios.get("https://api.jikan.moe/v4/anime?q=" + value);
+            const returenddata = await axios.get("https://api.jikan.moe/v4/anime?q=" + value + "&limit=24&order_by=mal_id");
             this.AnimeList = returenddata.data.data;
         }
        

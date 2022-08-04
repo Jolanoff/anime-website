@@ -2,7 +2,7 @@
     <div>
         <nav class="navbar">
             <div class="container">
-                <router-link to="/"> <a class="navbar-brand"><img src="../../assets/logo.png"></a></router-link>
+                <router-link to="/"> <a class="navbar-brand"><img class="logo" src="../../assets/logo.png"></a></router-link>
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <router-link to="/Anime"><a class="nav-link" aria-current="page" href="#">ANIME</a>
@@ -38,5 +38,8 @@ export default {
 
 a {
     text-decoration: none;
+}
+.logo{
+    height: 70px;
 }
 </style>

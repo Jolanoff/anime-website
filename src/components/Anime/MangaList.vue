@@ -11,6 +11,7 @@
                 <div class="col">
                 </div>
                 <div class="col">
+                      <SearchForAnime @search="handleSearch"/>
                 </div>
             </div>
         </div>
@@ -30,6 +31,8 @@
 import axios from 'axios';
 import Paginate from 'vuejs-paginate-next';
 import MangaItem from './Items/MangaItem.vue';
+import SearchForAnime from './Items/SearchForAnime.vue';
+
 export default {
     data: function () {
         return {
@@ -45,12 +48,16 @@ export default {
         async clickCallback(pageNum) {
             const returenddata = await axios.get("https://api.jikan.moe/v4/manga?q&limit=24&page=" + pageNum);
             this.MangaList = returenddata.data.data;
+        },
+        async handleSearch(value){
+            const returenddata = await axios.get("https://api.jikan.moe/v4/manga?q=" + value + "&limit=24&order_by=mal_id");
+            this.MangaList = returenddata.data.data;
         }
     },
 
 
 
-    components: { MangaItem, paginate: Paginate, }
+    components: { MangaItem, paginate: Paginate, SearchForAnime }
 }
 
 </script>
