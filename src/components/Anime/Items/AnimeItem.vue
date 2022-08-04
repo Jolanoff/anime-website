@@ -1,8 +1,6 @@
 <template>
   <div>
     <router-link :to="`/anime/${Anime.mal_id}`">
-
-
       <div class="cards">
         <figure class="card">
           <img :src="Anime.images.jpg.image_url" />
