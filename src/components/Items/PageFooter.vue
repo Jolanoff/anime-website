@@ -4,11 +4,11 @@
         <footer>
             
             <ul class="list-inline">
-                <li class="list-inline-item"><a href="#">Home</a></li>
-                <li class="list-inline-item"><a href="#">Top Anime</a></li>
-                <li class="list-inline-item"><a href="#">Top Manga</a></li>
-                <li class="list-inline-item"><a href="#">Anime</a></li>
-                <li class="list-inline-item"><a href="#">Manga </a></li>
+                <router-link to="/"><li class="list-inline-item"><a href="#">Home</a></li></router-link>
+                <router-link to="/TopAnime"><li class="list-inline-item"><a href="#">Top Anime</a></li></router-link>
+                <router-link to="/TopManga"><li class="list-inline-item"><a href="#">Top Manga</a></li></router-link>
+                <router-link to="/Anime"><li class="list-inline-item"><a href="#">Anime</a></li></router-link>
+                <router-link to="/Manga"><li class="list-inline-item"><a href="#">Manga </a></li></router-link>
             </ul>
             <p class="copyright">Animeoff © 2022</p>
         </footer>
